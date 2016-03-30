@@ -1,7 +1,7 @@
 -- ==============================================================
 -- enslavement Simulation
 -- Creation : 26/03/2016
--- Update : 26/03/2016
+-- Update : 28/03/2016
 -- Created by : KHOYRATEE Farad
 -- Updated by : KHOYRATEE Farad
 -- ==============================================================
@@ -67,12 +67,30 @@ Architecture Simu of enslavement_TB is
 
 	Simulate_encoder : Process
 	Begin
-		wait for 100 us;
+		wait for 10 us;
 		t_speed <= to_sfixed(60, E, -DEC);
-		wait for 100 us;
-		t_speed <= to_sfixed(80, E, -DEC);
-		wait for 100 us;
+		wait for 10 us;
+		t_speed <= to_sfixed(65, E, -DEC);
+		wait for 10 us;
+		t_speed <= to_sfixed(70, E, -DEC);
+		wait for 10 us;
 		t_speed <= to_sfixed(75, E, -DEC);
+		wait for 10 us;
+		t_speed <= to_sfixed(80, E, -DEC);
+		wait for 10 us;
+		t_speed <= to_sfixed(85, E, -DEC);
+		wait for 10 us;
+		t_speed <= to_sfixed(90, E, -DEC);
+		wait for 10 us;
+		t_speed <= to_sfixed(85, E, -DEC);
+		wait for 10 us;
+		t_speed <= to_sfixed(80, E, -DEC);
+		wait for 10 us;
+		t_speed <= to_sfixed(75, E, -DEC);
+		wait for 10 us;
+		t_speed <= to_sfixed(70, E, -DEC);
+		wait for 10 us;
+		t_speed <= to_sfixed(65, E, -DEC);
 	end process;
 	
 end simu;

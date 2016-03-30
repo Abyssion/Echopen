@@ -1,7 +1,7 @@
 -- ==============================================================
 -- PID controller Simulation
 -- Creation : 27/03/2016
--- Update : 27/03/2016
+-- Update : 28/03/2016
 -- Created by : KHOYRATEE Farad
 -- Updated by : KHOYRATEE Farad
 -- ==============================================================
@@ -36,9 +36,6 @@ Architecture Simu of PID_controller_TB is
 			static_error				: in 	sfixed(E downto -DEC);
 			
 			--OUT--
-					prop: out 	sfixed(E downto -DEC);
-		int: out 	sfixed(E downto -DEC);
-		der: out 	sfixed(E downto -DEC);
 			command						: out 	sfixed(E downto -DEC)
 		);
 	end component;
@@ -47,18 +44,13 @@ Architecture Simu of PID_controller_TB is
 	Signal t_reset 				: std_logic := '1';
 	Signal t_static_error		: sfixed(E downto -DEC) := to_sfixed(0, E, -DEC);
 	Signal t_command			: sfixed(E downto -DEC) := to_sfixed(0, E, -DEC);
-	signal t_prop				: sfixed(E downto -DEC) := to_sfixed(0, E, -DEC);
-	signal t_int: sfixed(E downto -DEC) := to_sfixed(0, E, -DEC);
-	signal t_der: sfixed(E downto -DEC) := to_sfixed(0, E, -DEC);
+	
 	Begin
 	DUT : PID_controller
 	Port map(
 		clk 			=> t_clk,
 		reset 			=> t_reset,
 		static_error	=> t_static_error,
-		prop=>t_prop,
-		int=>t_int,
-		der=>t_der,
 		command			=> t_command
 	);
 	

@@ -23,6 +23,8 @@ package operation is
 	
 	type fixed_point_tab is array(integer range <>) of sfixed(E downto -DEC);
 	
+	type UNRESOLVED_sfixed is array (INTEGER range <>) of STD_ULOGIC;
+	
 	-- Function --
 	function add(
 		a 		: sfixed(E downto -DEC);
@@ -43,32 +45,7 @@ package operation is
 		a 		: sfixed(E downto -DEC);
 		b 		: sfixed(E downto -DEC)
 	) return sfixed;
-	
-	-- Procedure --
-	procedure add(
-		signal a 		: 	in 	sfixed(E downto -DEC);
-		signal b 		: 	in 	sfixed(E downto -DEC);
-		signal result	:	out	sfixed(E downto -DEC)
-	);
-	
-	procedure sub(
-		signal a 		: 	in 	sfixed(E downto -DEC);
-		signal b 		: 	in 	sfixed(E downto -DEC);
-		signal result	:	out	sfixed(E downto -DEC)
-	);
-	
-	procedure mult(
-		signal a 		: 	in 	sfixed(E downto -DEC);
-		signal b 		: 	in 	sfixed(E downto -DEC);
-		signal result	:	out	sfixed(E downto -DEC)
-	);
-	
-	procedure div(
-		signal a 		: 	in 	sfixed(E downto -DEC);
-		signal b 		: 	in 	sfixed(E downto -DEC);
-		signal result	:	out	sfixed(E downto -DEC)
-	);
-	
+
 end operation;
 
 package body operation is
@@ -104,42 +81,5 @@ package body operation is
 	begin
 		return resize(a/b,a);
 	end div;
-	
-	-- Procedure --
-	procedure add(
-		signal a 		: 	in 	sfixed(E downto -DEC);
-		signal b 		: 	in 	sfixed(E downto -DEC);
-		signal result	:	out	sfixed(E downto -DEC)
-	) is
-	begin
-		result <= resize(a+b, a);
-	end add;
-	
-	procedure sub(
-		signal a 		: 	in 	sfixed(E downto -DEC);
-		signal b 		: 	in 	sfixed(E downto -DEC);
-		signal result	:	out	sfixed(E downto -DEC)
-	) is
-	begin
-		result <= resize(a-b, a);
-	end sub;
-	
-	procedure mult(
-		signal a 		: 	in 	sfixed(E downto -DEC);
-		signal b 		: 	in 	sfixed(E downto -DEC);
-		signal result	:	out	sfixed(E downto -DEC)
-	) is
-	begin
-		result <= resize(a*b, a);
-	end mult;
-	
-	procedure div(
-		signal a 		: 	in 	sfixed(E downto -DEC);
-		signal b 		: 	in 	sfixed(E downto -DEC);
-		signal result	:	out	sfixed(E downto -DEC)
-	) is
-	begin
-		result <= resize(a/b, a);
-	end div;
-	
+
 end operation;

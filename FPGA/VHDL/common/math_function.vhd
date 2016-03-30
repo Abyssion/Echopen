@@ -1,7 +1,7 @@
 -- ==============================================================
 -- mathematics function
--- Creation : 30/01/2016
--- Update : 30/01/2016
+-- Creation : 26/03/2016
+-- Update : 26/03/2016
 -- Created by : KHOYRATEE Farad
 -- Updated by : KHOYRATEE Farad
 -- Tested by  : --
@@ -33,6 +33,11 @@ package math_function is
     constant  SQRT_PI: REAL := 1.77245_38509_05516_02730;		-- square root of pi
     constant  DEG_TO_RAD: REAL := 0.01745_32925_19943_29577;	-- Conversion factor from degree to radian
     constant  RAD_TO_DEG: REAL := 57.29577_95130_82320_87680;	-- Conversion factor from radian to degree
+	
+	constant	PI_BY_TWO		:	sfixed(E downto -DEC)	:=	to_sfixed(1.57079632679489661923, E, -DEC);
+	constant	MINUS_PI_BY_TWO	:	sfixed(E downto -DEC)	:=	to_sfixed(-1.57079632679489661923, E, -DEC);
+	constant	ONE				:	sfixed(E downto -DEC)	:=	to_sfixed(1, E, -DEC);
+	constant	MINUS_ONE		:	sfixed(E downto -DEC)	:=	to_sfixed(-1, E, -DEC);
 	
 end math_function;
 

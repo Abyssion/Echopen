@@ -42,14 +42,16 @@ package constants is
 																);
 	constant POLE_NUMBER_SENSOR	: integer := 3;
 	
+	-- Enslavement
+	constant DUTY_CYCLE_MAX		: integer := 90;
+	constant DUTY_CYCLE_MIN		: integer := 1;
+	constant SPEED_COMMAND		: sfixed(E downto -DEC) 	:= to_sfixed(75, E, -DEC); -- tr/s (unit)
+		
 	-- angular position calcul --
 	constant DELTA_X			: sfixed(E downto -DEC)		:= div(
 																to_sfixed(1, E, -DEC),
 																to_sfixed(64, E, -DEC)																	
 																);
-	
-	-- Enslavement
-	constant SPEED_COMMAND		: sfixed(E downto -DEC) 	:= to_sfixed(75, E, -DEC); 						-- 10 tr/s (unit)
 	
 	-- RampGenerator
 	constant TIME_RAMP			: integer := 100;						-- us (unit)

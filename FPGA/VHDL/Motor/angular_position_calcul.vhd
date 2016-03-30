@@ -5,6 +5,11 @@
 -- Created by : KHOYRATEE Farad
 -- Updated by : KHOYRATEE Farad
 -- Simulated by : --
+-- Info :
+-- phi = arcsin(X) where X [-1;1] and phi [-pi/2;pi/2]
+-- X has 128 values
+-- delta_T = delta_phi/v 
+-- where delta_T is the time between two top
 -- ==============================================================
 
 -- standard library --
@@ -16,6 +21,7 @@ USE ieee.numeric_std.all;
 -- packages -- 
 use work.constants.all;
 use work.operation.all;
+use work.math_function.all;
 
 -- fixe point --
 use ieee.fixed_float_types.all;
@@ -40,8 +46,29 @@ ARCHITECTURE rtl OF PWM IS
 	signal	phi				:	sfixed(E downto -DEC);
 	signal	delta_phi		:	sfixed(E downto -DEC);
 	signal 	delta_T			:	sfixed(E downto -DEC);
-	signal 	position		:	integer range -64 to 64;
+	signal 	position		:	integer range 0 to 128;
+	signal	direction		:	std_logic;
 Begin
+
+position_calcul : process(clk)
+	variable counter	:	integer;
+begin
+	if reset = '1' then
+		position	<=	0;
+	elsif rising_edge(clk) then
+		if	to_sfixed(counter, E, -DEC)*DELTA_X = ONE then
+			direction	<= '0';
+		elsif to_sfixed(counter, E, -DEC)*DELTA_X = MINUS_ONE then
+			direction	<= '1';
+		end if;
+		
+		if counter > 127 then
+			counter	<= 0;
+		else
+			counter	<= counter + 1;
+		end if;
+	end if;
+end process;
 
 delta_phi_calcul : process(clk)
 begin

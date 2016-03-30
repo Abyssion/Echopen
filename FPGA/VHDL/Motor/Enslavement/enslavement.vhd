@@ -4,7 +4,7 @@
 -- Update : 28/03/2016
 -- Created by : KHOYRATEE Farad
 -- Updated by : KHOYRATEE Farad
--- Simulated by  : --
+-- Simulated by  : KHOYRATEE Farad
 -- ==============================================================
 
 -- standard library --

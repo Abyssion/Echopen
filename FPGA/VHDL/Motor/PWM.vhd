@@ -79,12 +79,6 @@ pwm_generator : Process(clk, reset)
 						Tcounter_Toff <= Tcounter_Toff + 1;
 					end if;
 			end case;
-			-- if (conv_integer(Tcounter_period)*CLOCK_PERIOD) > (PWM_PERIOD-1) then
-				-- pwm_temp	<= not pwm_temp;
-				-- Tcounter_period	<= (Tcounter_period'range => '0');
-			-- else
-				-- Tcounter_period <= Tcounter_period + 1;
-			-- end if;
 		end if;
 	end Process;
 END rtl;

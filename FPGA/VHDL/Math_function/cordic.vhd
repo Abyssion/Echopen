@@ -73,6 +73,6 @@ begin
 end process;
 
 cos	<=	std_logic_vector(x_array(x_array'high)(16 downto 0));
-sin	<=	std_logic_vector(x_array(x_array'high)(16 downto 0));
+sin	<=	std_logic_vector(Y_array(Y_array'high)(16 downto 0));
 
 end architecture rtl;

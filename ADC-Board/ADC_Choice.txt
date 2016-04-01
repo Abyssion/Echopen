@@ -1,0 +1,10 @@
+Contrainte ADC:
+
+Quantum           :
+Précision         : >= 12bits
+SNR               : <= 30dB
+Echantillonnage   : 100Mspl/s
+parrallèle/serie  : parrallèle    -- Série coute cher et les boitiers pour les boitier série haute vitesse sont très petits
+
+Choix :
+

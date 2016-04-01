@@ -5,6 +5,7 @@
 -- Created by : KHOYRATEE Farad
 -- Updated by : KHOYRATEE Farad
 -- Simulated by : KHOYRATEE Farad
+-- Approved by : LICCIONI Vincent
 -- ==============================================================
 
 LIBRARY IEEE;
@@ -46,7 +47,7 @@ Pulse_generation : Process(clk, reset)
 			case Single_ramp is
 				when High_state =>
 					if counter_steps+1 > steps_vector OR command_ramp = '0' then
-						counter_steps <= (others <= '0');
+						counter_steps <= (others => '0');
 						Single_ramp <= Low_State;
 					else
 						counter_steps <= counter_steps + 1;

@@ -68,7 +68,7 @@ begin
 				y_array(i)				<=	y_array(i-1) - (x_array(i-1)/2**i);
 				z_array(i)				<=	z_array(i-1) + tan_array(i);	
 			end if;
-		end if;
+		end loop;
 	end if;
 end process;
 

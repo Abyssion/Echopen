@@ -5,6 +5,7 @@
 -- Created by : KHOYRATEE Farad
 -- Updated by : KHOYRATEE Farad
 -- Simulated by : KHOYRATEE Farad
+-- Approved by : LICCIONI Vincent
 -- ==============================================================
 
 -- standard library --

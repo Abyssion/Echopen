@@ -5,6 +5,7 @@
 -- Created by : KHOYRATEE Farad
 -- Updated by : KHOYRATEE Farad
 -- Simulated by  : KHOYRATEE Farad
+-- Approved by  : LICCIONI Vincent
 -- ==============================================================
 
 -- standard library --
@@ -54,8 +55,10 @@ command <= sub(
 
 sampling_error : process(clk)
 begin
-	error_register(2) <= static_error;
-	error_register(1) <= error_register(2);
+	if rising_edge(clk) then
+		error_register(2) <= static_error;
+		error_register(1) <= error_register(2);
+	end if;
 end process;
 			
 proportional_calcul : process(clk)

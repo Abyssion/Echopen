@@ -1,0 +1,16 @@
+utilisé:
+LUT                   :
+portes logiques       :
+Slices                :
+RAM                   : 1*64*64           -- Sauvegarde de la position angulaire de chaque tir du morteur   
+Flash_RAM             : externe           -- Permet la mise à jour du composant
+IO                    :
+Horloge               : >=100MHz          -- ADC rapide à 100MSpl/s minimum
+PLL                   : 1                 -- Multiplicateur de fréquence pour échatillonage de signal par ADC
+Consomation           :
+Alimentation          :
+Dissipation thermique :
+Type de boitier       :
+
+
+

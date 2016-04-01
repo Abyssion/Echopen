@@ -5,6 +5,7 @@
 -- Created by : KHOYRATEE Farad
 -- Updated by : KHOYRATEE Farad
 -- Simulated by : KHOYRATEE Farad
+-- Approved by : LICCIONI Vincent
 -- ==============================================================
 
 LIBRARY IEEE;
@@ -47,7 +48,6 @@ Pulse_generation : Process(clk, reset)
 				when High_state =>
 					High_Pulse_Voltage_Ctrl <= '0';
 					if command = '0' then
-						High_Pulse_Voltage_Ctrl <= '0';
 						Single_pulse <= Low_State;
 					end if;
 				when Low_State =>

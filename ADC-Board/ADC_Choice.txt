@@ -1,6 +1,6 @@
 Contrainte ADC:
 
-Quantum           :
+Quantum           : =< 10mV
 Précision         : >= 12bits
 SNR               : <= 30dB
 Echantillonnage   : 100Mspl/s
